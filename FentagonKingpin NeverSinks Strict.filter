@@ -143,7 +143,7 @@ SetFontSize 40
 # Currency Tier B: Vaal, Chaos, Exalt, Exotic
 Show
 Class "Currency"
-BaseType "Vaal Orb" "Greater Jeweller's Orb" "Chaos Orb" "Lesser Jeweller's Orb" "Exotic" "Exalted Orb" "Regal Orb" "Artificer's Orb" "Glassblower's Bauble" "Orb of Alchemy" "Orb of Chance"
+BaseType "Vaal Orb" "Greater Jeweller's Orb" "Chaos Orb" "Lesser Jeweller's Orb" "Exotic" "Exalted Orb" "Regal Orb" "Artificer's Orb" "Glassblower's Bauble" "Orb of Alchemy" "Orb of Chance" "Chance Shard"
 SetTextColor 255 207 132
 SetBorderColor 255 207 132
 SetBackgroundColor 76 51 12
@@ -198,9 +198,9 @@ PlayEffect White
 MinimapIcon 1 White Circle
 
 # Currency Tier C: Vaal, Chaos, Exalt, Exotic
-Show
+Hide
 Class "Currency"
-BaseType "Arcanist's Etcher" "Armourer's Scrap" "Blacksmith's Whetstone" "Orb of Augmentation" "Orb of Transmutation" "Regal Shard" "Chance Shard"
+BaseType "Arcanist's Etcher" "Armourer's Scrap" "Blacksmith's Whetstone" "Orb of Augmentation" "Orb of Transmutation" "Regal Shard" 
 SetTextColor 255 207 132
 SetBorderColor 255 207 132
 MinimapIcon 2 Grey Circle
@@ -262,6 +262,7 @@ SetBorderColor 233 206 75
 PlayEffect Yellow
 MinimapIcon 1 Yellow Diamond
 CustomAlertSound "Kingpin\RareAmuletsRingsBelts.wav" 300
+DropLevel >= 68
 
 #--------------------------
 # Rings, Amulets, Belts
@@ -272,12 +273,14 @@ Rarity Normal
 Class "Rings" "Amulets" "Belts"
 SetFontSize 40
 CustomAlertSound "Kingpin\AmuletsRingsBelts.wav" 300
+DropLevel >= 68
 
 Show
 Class "Rings" "Amulets" "Belts"
 Rarity Magic
 SetFontSize 40
 CustomAlertSound "Kingpin\AmuletsRingsBelts.wav" 300
+DropLevel >= 68
 
 #--------------------------
 # Salvagable Items
@@ -343,3 +346,24 @@ CustomAlertSound "Kingpin\Quality10.wav" 300
 
 Show
 BaseType == "Expert Laced Boots"
+
+#Mapping Rare Top Tier (Expert)
+Show
+BaseType "Expert"
+Rarity >= Magic
+Class "Flasks" "Body Armours" "Helmets" "Boots" "Gloves" "Shields" "Foci" "Quivers" "One Hand Maces" "Two Hand Maces" "Staves" "Quarterstaves" "Bows" "Crossbows" "Wands" "Sceptres"
+DropLevel >= 68
+CustomAlertSound "Kingpin\Essence.wav" 300
+
+#Mapping Rare Top Tier (Expert)
+Show
+Rarity >= Magic
+Class "Jewel"
+DropLevel >= 68
+CustomAlertSound "Kingpin\Essence.wav" 300
+
+Hide
+Rarity <= Rare
+Class "Flasks" "Body Armours" "Helmets" "Boots" "Gloves" "Shields" "Foci" "Quivers" "One Hand Maces" "Two Hand Maces" "Staves" "Quarterstaves" "Bows" "Crossbows" "Wands" "Sceptres"
+DropLevel < 68
+SetBackgroundColor 0 0 0 125
