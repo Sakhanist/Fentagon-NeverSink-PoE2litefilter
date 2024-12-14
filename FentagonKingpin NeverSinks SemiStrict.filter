@@ -365,7 +365,7 @@ CustomAlertSound "Kingpin\Essence.wav" 300
 Show
 Rarity = Rare
 Class "Wands" "Sceptres" "Staves"
-ItemLevel >=68
+ItemLevel >= 68
 CustomAlertSound "Kingpin\Essence.wav" 300
 
 Hide
