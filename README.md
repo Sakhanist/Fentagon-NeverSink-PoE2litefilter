@@ -55,4 +55,5 @@ Download the latest release from github.
 
 Fentagon Edition
 
+![image](https://github.com/user-attachments/assets/d6e825ba-c94c-41a5-b487-f13f60868578)
 
