@@ -21,8 +21,8 @@ Rarity Unique
 SetTextColor 175 96 37 255
 SetBorderColor 175 96 37 255
 SetBackgroundColor 53 13 13 255
-#PlayAlertSound 3 500
-CustomAlertSound "Viper\i_feel_so_unique.wav" 500
+#PlayAlertSound 3 300
+CustomAlertSound "Viper\i_feel_so_unique.wav" 300
 PlayEffect Brown
 MinimapIcon 2 Brown Star
 SetFontSize 40
@@ -36,7 +36,7 @@ SetFontSize 45
 SetTextColor 255 0 0 255
 SetBorderColor 255 0 0 255
 SetBackgroundColor 255 255 255 255
-CustomAlertSound "Viper\Hahaa.wav" 500
+CustomAlertSound "Viper\Hahaa.wav" 300
 
 PlayEffect Red
 MinimapIcon 0 Red Star
@@ -49,8 +49,8 @@ SetFontSize 45
 SetTextColor 255 0 0 255
 SetBorderColor 255 0 0 255
 SetBackgroundColor 255 255 255 255
-#PlayAlertSound 6 500
-CustomAlertSound "Viper\im_about_to_blaze_up.wav" 500
+#PlayAlertSound 6 300
+CustomAlertSound "Viper\im_about_to_blaze_up.wav" 300
 
 PlayEffect Red
 MinimapIcon 0 Red Star
@@ -64,7 +64,7 @@ StackSize >= 2000
 BaseType == "Gold"
 SetTextColor 255 255 255
 SetBorderColor 255 255 255
-CustomAlertSound "Viper\crazy_cash.wav" 500
+CustomAlertSound "Viper\crazy_cash.wav" 300
 PlayEffect Orange Temp
 
 Show
@@ -81,8 +81,8 @@ Show
 BaseType "Uncut "
 SetTextColor 20 240 240
 SetBorderColor 20 240 240
-#PlayAlertSound 2 500
-CustomAlertSound "Viper\yeah.wav" 500
+#PlayAlertSound 2 300
+CustomAlertSound "Viper\yeah.wav" 300
 PlayEffect Cyan
 MinimapIcon 1 Cyan Triangle
 
@@ -107,7 +107,7 @@ SetBorderColor 0 240 190
 SetFontSize 40
 MinimapIcon 2 Cyan Triangle
 PlayEffect Cyan
-CustomAlertSound "Viper\pearls_and_stones.wav" 500
+CustomAlertSound "Viper\pearls_and_stones.wav" 300
 
 # Special A Tier - Rare Jewels
 Show
@@ -117,7 +117,7 @@ SetTextColor 0 240 190
 SetBorderColor 0 240 190
 SetFontSize 40
 MinimapIcon 2 Cyan Triangle
-CustomAlertSound "Viper\top_funds.wav" 500
+CustomAlertSound "Viper\top_funds.wav" 300
 PlayEffect Cyan
 
 # Special B Tier - Any Jewels
@@ -127,7 +127,7 @@ Rarity Magic
 SetTextColor 0 240 190
 SetBorderColor 0 240 190
 SetFontSize 40
-CustomAlertSound "Viper\diamonds.wav" 500
+CustomAlertSound "Viper\diamonds.wav" 300
 PlayEffect Cyan Temp
 
 # Special B Tier - Any Runes and Charms
@@ -135,7 +135,7 @@ Show
 BaseType " Rune" " Charm"
 SetTextColor 0 240 190
 PlayEffect Cyan Temp
-CustomAlertSound "Viper\tick_tock.wav" 500
+CustomAlertSound "Viper\tick_tock.wav" 300
 
 #--------------------------
 # Socketables and Special Character Equipment
@@ -148,8 +148,8 @@ BaseType "Gemcutter's Prism" "Orb of Annulment" "Orb of Chance"
 SetTextColor 255 255 255 255
 SetBorderColor 255 255 255 255
 SetBackgroundColor 240 90 35
-#PlayAlertSound 1 500
-CustomAlertSound "Viper\unnecessary_cash.wav" 500
+#PlayAlertSound 1 300
+CustomAlertSound "Viper\unnecessary_cash.wav" 300
 PlayEffect White
 MinimapIcon 1 White Circle
 SetFontSize 40
@@ -161,8 +161,8 @@ BaseType "Vaal Orb" "Greater Jeweller's Orb" "Chaos Orb" "Lesser Jeweller's Orb"
 SetTextColor 255 207 132
 SetBorderColor 255 207 132
 SetBackgroundColor 76 51 12
-#PlayAlertSound 2 500
-CustomAlertSound "Viper\NOTHINGCHANGEDBUTTHEMONEY.wav" 500
+#PlayAlertSound 2 300
+CustomAlertSound "Viper\NOTHINGCHANGEDBUTTHEMONEY.wav" 300
 PlayEffect White
 MinimapIcon 1 White Circle
 SetFontSize 40
@@ -174,8 +174,8 @@ BaseType "Distilled"
 SetTextColor 255 207 132
 SetBorderColor 255 207 132
 SetBackgroundColor 76 51 12
-#PlayAlertSound 2 500
-CustomAlertSound "Viper\haha.wav" 500
+#PlayAlertSound 2 300
+CustomAlertSound "Viper\haha.wav" 300
 PlayEffect White
 MinimapIcon 1 White Circle
 
@@ -185,7 +185,7 @@ BaseType "Catalyst"
 SetTextColor 255 207 132
 SetBorderColor 255 207 132
 SetBackgroundColor 76 51 12
-PlayAlertSound 2 500
+PlayAlertSound 2 300
 PlayEffect White
 MinimapIcon 1 White Circle
 
@@ -195,8 +195,8 @@ BaseType "Essence of"
 SetTextColor 255 207 132
 SetBorderColor 255 207 132
 SetBackgroundColor 76 51 12
-#PlayAlertSound 2 500
-CustomAlertSound "Viper\holla_when_you_want_some.wav" 500
+#PlayAlertSound 2 300
+CustomAlertSound "Viper\holla_when_you_want_some.wav" 300
 PlayEffect White
 MinimapIcon 1 White Circle
 
@@ -206,8 +206,8 @@ BaseType "Omen of"
 SetTextColor 255 207 132
 SetBorderColor 255 207 132
 SetBackgroundColor 76 51 12
-#PlayAlertSound 2 500
-CustomAlertSound "Viper\whats_up_with_that.wav" 500
+#PlayAlertSound 2 300
+CustomAlertSound "Viper\whats_up_with_that.wav" 300
 PlayEffect White
 MinimapIcon 1 White Circle
 
@@ -236,7 +236,7 @@ Class "Currency"
 SetTextColor 255 207 132
 SetBorderColor 255 207 132
 SetBackgroundColor 76 51 12
-PlayAlertSound 2 500
+PlayAlertSound 2 300
 PlayEffect Pink
 MinimapIcon 1 White Circle
 
@@ -246,8 +246,8 @@ BaseType "Simulacrum" " Tablet" "Breachstone" "Barya" "Ultimatum" " Fragment" "C
 SetTextColor 255 207 255
 SetBorderColor 255 207 255
 SetBackgroundColor 65 20 80
-#PlayAlertSound 2 500         l
-CustomAlertSound "Viper\aah.wav" 500
+#PlayAlertSound 2 300         l
+CustomAlertSound "Viper\aah.wav" 300
 PlayEffect White
 MinimapIcon 1 White Square
 SetFontSize 40
@@ -257,8 +257,8 @@ BaseType "Waystone"
 Rarity <= Rare
 SetTextColor 255 255 255
 SetBorderColor 255 255 255
-#PlayAlertSound 4 500
-CustomAlertSound "Viper\heres_a_lil_somthin_for_the_hustlers.wav" 500
+#PlayAlertSound 4 300
+CustomAlertSound "Viper\heres_a_lil_somthin_for_the_hustlers.wav" 300
 PlayEffect White
 MinimapIcon 1 White Square
 SetFontSize 40
@@ -275,7 +275,7 @@ SetTextColor 233 206 75
 SetBorderColor 233 206 75
 PlayEffect Yellow
 MinimapIcon 1 Yellow Diamond
-CustomAlertSound "Viper\i_sell_powder_i_sell_crack.wav" 500
+CustomAlertSound "Viper\i_sell_powder_i_sell_crack.wav" 300
 
 #--------------------------
 # Rings, Amulets, Belts
@@ -285,13 +285,13 @@ Show
 Rarity Normal
 Class "Rings" "Amulets" "Belts"
 SetFontSize 40
-CustomAlertSound "Viper\i_sell_powder.wav" 500
+CustomAlertSound "Viper\i_sell_powder.wav" 300
 
 Show
 Class "Rings" "Amulets" "Belts"
 Rarity Magic
 SetFontSize 40
-CustomAlertSound "Viper\i_sell_crack.wav" 500
+CustomAlertSound "Viper\i_sell_crack.wav" 300
 
 #--------------------------
 # Salvagable Items
@@ -309,7 +309,7 @@ Quality > 10
 Rarity Normal
 SetBorderColor 200 200 200
 SetFontSize 35
-CustomAlertSound "Viper\choose_me.wav" 500
+CustomAlertSound "Viper\choose_me.wav" 300
 
 # Not working!
 Show
@@ -323,7 +323,7 @@ Quality > 10
 Rarity Magic
 SetBorderColor 0 0 200
 SetFontSize 35
-CustomAlertSound "Viper\choose_me.wav" 500
+CustomAlertSound "Viper\choose_me.wav" 300
 
 #--------------------------
 # OPTIONAL RULES
