@@ -27,6 +27,14 @@ PlayEffect Brown
 MinimapIcon 2 Brown Star
 SetFontSize 40
 
+##Key
+Show
+BaseType "Bronze Key" "Silver Key" "Gold Key"
+SetTextColor 180 180 180
+CustomAlertSound "Kingpin\Key.wav" 300
+
+
+
 ## Divine Orb Style
 Show
 Class "Currency"
@@ -140,10 +148,24 @@ PlayEffect White
 MinimapIcon 1 White Circle
 SetFontSize 40
 
+#Exalted Orb
+Show
+Class "Currency"
+BaseType "Exalted Orb"
+SetTextColor 255 207 132
+SetBorderColor 255 207 132
+SetBackgroundColor 76 51 12
+#PlayAlertSound 2 300
+CustomAlertSound "Kingpin\Exalt.wav" 300
+PlayEffect White
+MinimapIcon 1 White Circle
+SetFontSize 40
+
+
 # Currency Tier B: Vaal, Chaos, Exalt, Exotic
 Show
 Class "Currency"
-BaseType "Vaal Orb" "Greater Jeweller's Orb" "Chaos Orb" "Lesser Jeweller's Orb" "Exotic" "Exalted Orb" "Regal Orb" "Artificer's Orb" "Glassblower's Bauble" "Orb of Alchemy" "Orb of Chance"
+BaseType "Vaal Orb" "Greater Jeweller's Orb" "Chaos Orb" "Lesser Jeweller's Orb" "Exotic" "Regal Orb" "Artificer's Orb" "Glassblower's Bauble" "Orb of Alchemy" "Orb of Chance"
 SetTextColor 255 207 132
 SetBorderColor 255 207 132
 SetBackgroundColor 76 51 12
