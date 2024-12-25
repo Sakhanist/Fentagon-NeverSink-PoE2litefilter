@@ -1,7 +1,7 @@
 #===============================================================================================================
 # NeverSink's Indepth Loot Filter - for Path of Exile
 #===============================================================================================================
-# VERSION:  0.1.1
+# VERSION:  0.2.3
 # AUTHOR:   NeverSink
 #
 # This is a mini-filter designed for early PoE2 EA gameplay. I will eventually replace it with a full-fledged filter
@@ -27,14 +27,6 @@ PlayEffect Brown
 MinimapIcon 2 Brown Star
 SetFontSize 40
 
-##Key
-Show
-BaseType "Bronze Key" "Silver Key" "Gold Key"
-SetTextColor 180 180 180
-CustomAlertSound "Kingpin\Key.wav" 300
-
-
-
 ## Divine Orb Style
 Show
 Class "Currency"
@@ -45,9 +37,20 @@ SetBorderColor 255 0 0 255
 SetBackgroundColor 255 255 255 255
 #PlayAlertSound 6 300
 CustomAlertSound "Kingpin\CurrTierS.wav" 300
-
 PlayEffect Red
 MinimapIcon 0 Red Star
+
+Show
+BaseType == "Distilled Isolation" "Distilled Suffering"
+SetFontSize 45
+SetTextColor 255 0 0 255
+SetBorderColor 255 0 0 255
+SetBackgroundColor 255 255 255 255
+#PlayAlertSound 6 300
+CustomAlertSound "Kingpin\CurrTierS.wav" 300
+PlayEffect Red
+MinimapIcon 0 Red Star
+
 
 #--------------------------
 # Gold
@@ -71,14 +74,65 @@ SetBackgroundColor 0 0 0 180
 # Uncut Gems
 #--------------------------
 
+# Always make Spirit gems pop
 Show
-BaseType "Uncut "
+BaseType "Uncut Spirit Gem"
 SetTextColor 20 240 240
 SetBorderColor 20 240 240
 #PlayAlertSound 2 300
 CustomAlertSound "Kingpin\UncutGems.wav" 300
 PlayEffect Cyan
 MinimapIcon 1 Cyan Triangle
+SetFontSize 40
+
+# Make support gems pop during campaign
+Show
+AreaLevel < 68
+BaseType "Uncut Support Gem"
+SetTextColor 20 240 240
+SetBorderColor 20 240 240
+#PlayAlertSound 2 300
+CustomAlertSound "Kingpin\UncutGems.wav" 300
+PlayEffect Cyan
+MinimapIcon 1 Cyan Triangle
+SetFontSize 40
+
+# Make skill gems pop during campaign
+Show
+AreaLevel < 65
+BaseType "Uncut Skill Gem"
+SetTextColor 20 240 240
+SetBorderColor 20 240 240
+#PlayAlertSound 2 300
+CustomAlertSound "Kingpin\UncutGems.wav" 300
+PlayEffect Cyan
+MinimapIcon 1 Cyan Triangle
+SetFontSize 40
+
+# Gems up to level 18 in maps don't get a special highlight
+Show
+ItemLevel <= 18
+BaseType "Uncut Skill Gem"
+SetTextColor 20 240 240
+SetBorderColor 20 240 240
+SetFontSize 35
+
+Show
+BaseType "Uncut Support Gem"
+SetTextColor 20 240 240
+SetBorderColor 20 240 240
+SetFontSize 35
+
+# Level 19 gems and up in maps get a special highlight
+Show
+BaseType "Uncut Skill Gem"
+SetTextColor 20 240 240
+SetBorderColor 20 240 240
+#PlayAlertSound 2 300
+CustomAlertSound "Kingpin\UncutGems.wav" 300
+PlayEffect Cyan
+MinimapIcon 1 Cyan Triangle
+SetFontSize 40
 
 #--------------------------
 # Socketables and Special Character Equipment
@@ -89,9 +143,29 @@ Show
 BaseType "Soul Core" "Timeless"
 SetTextColor 0 240 190
 SetBorderColor 0 240 190
-SetFontSize 40
-MinimapIcon 2 Cyan Triangle
+SetFontSize 45
+MinimapIcon 0 Cyan Diamond
+PlayAlertSound 2 300
 PlayEffect Cyan
+
+# Special Highlight - Breach Rings
+Show 
+Rarity Rare
+BaseType == "Breach Ring"
+SetTextColor 0 240 190
+SetBorderColor 0 240 190
+SetFontSize 40
+MinimapIcon 1 Cyan Diamond
+PlayEffect Cyan
+PlayAlertSound 2 300
+
+Show 
+Rarity <= Magic
+BaseType == "Breach Ring"
+SetTextColor 0 240 190
+SetFontSize 35
+MinimapIcon 2 Cyan Diamond
+PlayEffect Cyan Temp
 
 # Special A Tier - Sanctum Relics
 Show 
@@ -99,9 +173,10 @@ Class "Relic"
 SetTextColor 0 240 190
 SetBorderColor 0 240 190
 SetFontSize 40
-MinimapIcon 2 Cyan Triangle
-PlayEffect Cyan
+MinimapIcon 1 Cyan Diamond
+#PlayAlertSound 2 300
 CustomAlertSound "Kingpin\Sanctum.wav" 300
+PlayEffect Cyan
 
 # Special A Tier - Rare Jewels
 Show
@@ -110,14 +185,14 @@ Rarity Rare
 SetTextColor 0 240 190
 SetBorderColor 0 240 190
 SetFontSize 40
-MinimapIcon 2 Cyan Triangle
+MinimapIcon 1 Cyan Diamond
 CustomAlertSound "Kingpin\RareJewels.wav" 300
 PlayEffect Cyan
 
 # Special B Tier - Any Jewels
 Show
 Class "Jewel"
-Rarity Magic
+Rarity <= Magic
 SetTextColor 0 240 190
 SetBorderColor 0 240 190
 SetFontSize 40
@@ -132,84 +207,82 @@ PlayEffect Cyan Temp
 CustomAlertSound "Kingpin\CharmsRunes.wav" 300
 
 #--------------------------
+# Scroll of Wisdom High Level Hiding
+#--------------------------
+
+Hide
+BaseType "Scroll of Wisdom"
+AreaLevel >= 65
+Rarity <= Magic
+
+#--------------------------
 # Socketables and Special Character Equipment
 #--------------------------
 
 # Currency Tier A: Gemcutter, Annullment
 Show
 Class "Currency"
-BaseType "Gemcutter's Prism" "Orb of Annulment" "Orb of Chance"
+BaseType "Orb of Annulment" "Orb of Chance" "Greater Jeweller's Orb" "Distilled Fear" "Distilled Despair"
 SetTextColor 255 255 255 255
 SetBorderColor 255 255 255 255
 SetBackgroundColor 240 90 35
 #PlayAlertSound 1 300
 CustomAlertSound "Kingpin\CurrTierA.wav" 300
 PlayEffect White
-MinimapIcon 1 White Circle
-SetFontSize 40
+MinimapIcon 1 Yellow Circle
+SetFontSize 45
 
-#Exalted Orb
+# Currency Tier B: Exalt
 Show
 Class "Currency"
-BaseType "Exalted Orb"
+BaseType "Exotic Coinage" "Exalted Orb"
+SetTextColor 255 207 92
+SetBorderColor 255 207 92
+SetBackgroundColor 76 51 12
+#PlayAlertSound 2 300
+CustomAlertSound "Kingpin\Exalt.wav" 300
+PlayEffect Yellow
+MinimapIcon 1 Yellow Circle
+SetFontSize 45
+
+Show
+BaseType "Gold Key" "Silver Key" "Bronze Key"
 SetTextColor 255 207 132
 SetBorderColor 255 207 132
 SetBackgroundColor 76 51 12
 #PlayAlertSound 2 300
-CustomAlertSound "Kingpin\Exalt.wav" 300
+CustomAlertSound "Kingpin\Key.wav" 300
 PlayEffect White
-MinimapIcon 1 White Circle
+MinimapIcon 2 White Circle
 SetFontSize 40
 
-
-# Currency Tier B: Vaal, Chaos, Exalt, Exotic
+# Currency Tier B: Regal, Vaal ...
 Show
 Class "Currency"
-BaseType "Vaal Orb" "Greater Jeweller's Orb" "Chaos Orb" "Lesser Jeweller's Orb" "Exotic" "Regal Orb" "Artificer's Orb" "Glassblower's Bauble" "Orb of Alchemy" "Orb of Chance"
+BaseType "Gemcutter's Prism" "Vaal Orb" "Chaos Orb" "Lesser Jeweller's Orb" "Regal Orb" "Artificer's Orb" "Glassblower's Bauble" "Orb of Alchemy"
 SetTextColor 255 207 132
 SetBorderColor 255 207 132
 SetBackgroundColor 76 51 12
 #PlayAlertSound 2 300
 CustomAlertSound "Kingpin\CurrTierB.wav" 300
 PlayEffect White
-MinimapIcon 1 White Circle
+MinimapIcon 2 White Circle
 SetFontSize 40
 
-# League Mechanic Currency
 Show
 Class "Currency"
-BaseType "Distilled"
+BaseType "Simulacrum Splinter" "Breach Splinter" " Artifact" 
 SetTextColor 255 207 132
 SetBorderColor 255 207 132
 SetBackgroundColor 76 51 12
-#PlayAlertSound 2 300
+#PlayAlertSound 2 100
 CustomAlertSound "Kingpin\AnointOil.wav" 300
-PlayEffect White
-MinimapIcon 1 White Circle
+PlayEffect White Temp
+MinimapIcon 1 White Kite
+SetFontSize 35
 
 Show
-Class "Currency"
-BaseType "Catalyst" 
-SetTextColor 255 207 132
-SetBorderColor 255 207 132
-SetBackgroundColor 76 51 12
-PlayAlertSound 2 300
-PlayEffect White
-MinimapIcon 1 White Circle
-
-Show
-Class "Currency"
-BaseType "Essence of"
-SetTextColor 255 207 132
-SetBorderColor 255 207 132
-SetBackgroundColor 76 51 12
-#PlayAlertSound 2 300
-CustomAlertSound "Kingpin\Essence.wav" 300
-PlayEffect White
-MinimapIcon 1 White Circle
-
-Show
-Class "Currency"
+Class "Omen"
 BaseType "Omen of"
 SetTextColor 255 207 132
 SetBorderColor 255 207 132
@@ -217,26 +290,40 @@ SetBackgroundColor 76 51 12
 #PlayAlertSound 2 300
 CustomAlertSound "Kingpin\Omen.wav" 300
 PlayEffect White
-MinimapIcon 1 White Circle
+MinimapIcon 2 White Circle
+SetFontSize 40
+
+Show
+Class "Currency"
+BaseType "Distilled" "Catalyst" "Essence of"
+SetTextColor 255 207 132
+SetBorderColor 255 207 132
+SetBackgroundColor 76 51 12
+#PlayAlertSound 2 300
+CustomAlertSound "Kingpin\Essence.wav" 300
+PlayEffect White
+MinimapIcon 2 White Circle
+SetFontSize 40
+
+# Currency Tier C: Vaal, Chaos, Exalt, Exotic
+Show
+AreaLevel >= 70
+Class "Currency"
+BaseType "Arcanist's Etcher" "Armourer's Scrap" "Blacksmith's Whetstone" "Orb of Augmentation" "Orb of Transmutation" "Regal Shard" "Chance Shard"
+SetTextColor 220 190 132
+SetFontSize 35
 
 # Currency Tier C: Vaal, Chaos, Exalt, Exotic
 Show
 Class "Currency"
 BaseType "Arcanist's Etcher" "Armourer's Scrap" "Blacksmith's Whetstone" "Orb of Augmentation" "Orb of Transmutation" "Regal Shard" "Chance Shard"
-SetTextColor 255 207 132
-SetBorderColor 255 207 132
+SetTextColor 220 190 132
 MinimapIcon 2 Grey Circle
+SetFontSize 35
 
 Show
 Class "Currency"
-BaseType "Simulacrum Splinter" "Breach Splinter" " Artifact" 
-SetTextColor 255 207 132
-SetBorderColor 255 207 132
-MinimapIcon 2 Grey Circle
-
-Show
-Class "Currency"
-BaseType "Wisdom" "Shard"
+BaseType "Scroll of Wisdom" "Shard"
 
 # Unknown currency
 Show
@@ -250,15 +337,74 @@ MinimapIcon 1 White Circle
 
 # Fragments
 Show
-BaseType "Simulacrum" " Tablet" "Breachstone" "Barya" "Ultimatum" " Fragment" "Cowardly Fate" "Deadly Fate" "Victorious Fate" "Expedition Logbook"
+Class "Pinnacle Keys"
 SetTextColor 255 207 255
 SetBorderColor 255 207 255
 SetBackgroundColor 65 20 80
 #PlayAlertSound 2 300
 CustomAlertSound "Kingpin\Fragments.wav" 300
 PlayEffect White
-MinimapIcon 1 White Square
+MinimapIcon 1 Yellow Square
 SetFontSize 40
+
+Show
+BaseType "Simulacrum" "Breachstone" "Cowardly Fate" "Deadly Fate" "Victorious Fate" "Expedition Logbook" "Test of"
+SetTextColor 255 207 255
+SetBorderColor 255 207 255
+SetBackgroundColor 65 20 80
+#PlayAlertSound 2 300
+CustomAlertSound "Kingpin\Fragments.wav" 300
+PlayEffect Purple
+MinimapIcon 1 Purple Square
+SetFontSize 45
+
+Show
+Class "Tablet"
+SetTextColor 255 207 255
+SetBorderColor 255 207 255
+SetBackgroundColor 65 20 80
+#PlayAlertSound 2 300
+CustomAlertSound "Kingpin\Fragments.wav" 300
+PlayEffect Purple
+MinimapIcon 1 Purple Square
+SetFontSize 45
+
+Show
+BaseType "Barya" "Ultimatum"
+SetTextColor 255 207 255
+SetBorderColor 255 207 255
+SetBackgroundColor 65 20 80
+#PlayAlertSound 2 300
+CustomAlertSound "Kingpin\Fragments.wav" 300
+PlayEffect Grey
+MinimapIcon 1 Grey Square
+SetFontSize 40
+
+#--------------------------
+# Waystones
+#--------------------------
+
+Show
+WaystoneTier < 10
+AreaLevel > 77
+BaseType "Waystone"
+Rarity <= Rare
+SetTextColor 255 255 255
+SetBorderColor 255 255 255
+SetFontSize 35
+#PlayAlertSound 4 300
+CustomAlertSound "Kingpin\Maps.wav" 300
+
+Show
+WaystoneTier < 5
+AreaLevel > 74
+BaseType "Waystone"
+Rarity <= Rare
+SetTextColor 255 255 255
+SetBorderColor 255 255 255
+SetFontSize 35
+#PlayAlertSound 4 300
+CustomAlertSound "Kingpin\Maps.wav" 300
 
 Show
 BaseType "Waystone"
@@ -332,6 +478,70 @@ Rarity Magic
 SetBorderColor 0 0 200
 SetFontSize 35
 CustomAlertSound "Kingpin\Quality10.wav" 300
+
+
+#--------------------------
+# Random Rares
+#--------------------------
+
+## Uncomment this rule to hide low level rares in high level zones
+
+# Hide
+# Rarity Rare
+# DropLevel < 50
+# AreaLevel > 72
+# SetFontSize 35
+
+Show
+Rarity Rare
+SetFontSize 35
+
+#--------------------------
+# Hide Rules (only high level), super light edition
+#--------------------------
+
+Hide
+Quality = 0
+AreaLevel > 70
+Rarity <= Magic
+Class "Flasks"
+
+Hide
+AreaLevel >= 78
+Rarity <= Magic
+DropLevel < 65
+Class "Body Armours" "Helmets" "Boots" "Gloves" "Shields" "Foci" "One Hand Maces" "Two Hand Maces" "Quarterstaves" "Bows" "Crossbows"
+
+Hide
+AreaLevel > 75
+Rarity <= Magic
+DropLevel < 64
+Class "Body Armours" "Helmets" "Boots" "Gloves" "Shields" "Foci" "One Hand Maces" "Two Hand Maces" "Quarterstaves" "Bows" "Crossbows"
+
+Hide
+AreaLevel > 73
+Rarity <= Magic
+DropLevel < 60
+Class "Body Armours" "Helmets" "Boots" "Gloves" "Shields" "Foci" "One Hand Maces" "Two Hand Maces" "Quarterstaves" "Bows" "Crossbows"
+
+Hide
+AreaLevel > 72
+Rarity <= Magic
+DropLevel < 55
+Class "Body Armours" "Helmets" "Boots" "Gloves" "Shields" "Foci" "One Hand Maces" "Two Hand Maces" "Quarterstaves" "Bows" "Crossbows"
+
+# Quivers have some relevant bases at 50+ so we treat them different
+Hide
+AreaLevel > 74
+Rarity <= Magic
+DropLevel < 50
+Class "Quivers"
+
+Hide
+AreaLevel > 70
+Rarity <= Normal
+DropLevel < 50
+Class "Body Armours" "Helmets" "Boots" "Gloves" "Shields" "Foci" "Quivers" "One Hand Maces" "Two Hand Maces" "Quarterstaves" "Bows" "Crossbows"
 
 #--------------------------
 # OPTIONAL RULES
